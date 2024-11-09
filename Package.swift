@@ -14,7 +14,10 @@ let package = Package(
             targets: ["DartThirdPartyLibraries"]),
     ],
     dependencies: [
-      .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.0"))
+      .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.0")),
+      .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", .upToNextMajor(from: "4.0.0")),
+      .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+      .package(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", from: "5.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -22,7 +25,11 @@ let package = Package(
         .target(
             name: "DartThirdPartyLibraries",
             dependencies: [
-              "Alamofire"
+              "Alamofire",
+              "SwiftyJSON",
+              .product(name: "RxSwift", package: "RxSwift"),
+              .product(name: "RxCocoa", package: "RxSwift"),
+              "RxDataSources"
             ]
         ),
         .testTarget(
