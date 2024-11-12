@@ -22,6 +22,7 @@ let package = Package(
       .package(url: "https://github.com/onevcat/Kingfisher.git", .upToNextMajor(from: "8.0.0")),
       .package(url: "https://github.com/devicekit/DeviceKit.git", .upToNextMajor(from: "4.0.0")),
       .package(url: "https://github.com/googlemaps/google-maps-ios-utils", .upToNextMajor(from: "6.0.0")),
+      .package(url: "https://github.com/googlemaps/ios-maps-sdk", .upToNextMajor(from: "9.0.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -37,9 +38,7 @@ let package = Package(
               "SnapKit",
               "Kingfisher",
               "DeviceKit",
-              .product(name: "GoogleMaps", package: "google-maps-ios-utils"),
-              .product(name: "GooglePlaces", package: "google-maps-ios-utils"),
-              .product(name: "Google-Maps-iOS-Utils", package: "google-maps-ios-utils")
+              .product(name: "GoogleMaps", package: "ios-maps-sdk")
             ]
         ),
         .testTarget(
