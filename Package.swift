@@ -41,6 +41,7 @@ let package = Package(
               "Kingfisher",
               "DeviceKit",
               .product(name: "GoogleMaps", package: "ios-maps-sdk"),
+              .product(name: "GoogleMapsUtils", package: "google-maps-ios-utils"),
               "CryptoSwift",
               "SwiftDate"
             ]
